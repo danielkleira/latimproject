@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# 🏛️ Treino de Latim
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um jogo interativo para treinar orações em latim, inspirado em métodos de memorização ativa.
 
-Currently, two official plugins are available:
+👉 Complete os textos corretamente e teste seu conhecimento com diferentes níveis de dificuldade.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Preview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🧠 Exercício em andamento
 
-## Expanding the ESLint configuration
+![Exemplo do jogo](./docs/game.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### ⚙️ Tela inicial
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+![Tela inicial](./docs/home.png)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 Funcionalidades
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- 📖 Seleção de orações em latim
+- 🎯 Sistema de dificuldade progressiva:
+  - Leigo 🕯️ (15% de palavras ocultas)
+  - Catecúmeno 📖 (25% de palavras ocultas)
+  - Fiel ⛪ (35% de palavras ocultas)
+  - Devoto 🙏 (45% de palavras ocultas)
+  - Santo ✨ (50% de palavras ocultas)
+- 🧩 Preenchimento de palavras ocultas
+- 🎨 Feedback visual:
+  - 🟢 Verde = correto
+  - 🔴 Vermelho = errado
+  - 🟡 Amarelo = não preenchido
+- 📊 Cálculo automático de pontuação
+- 💾 Armazenamento da última pontuação no navegador
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Tecnologias
+
+- ⚛️ React + TypeScript
+- ⚡ Vite
+- 🎨 CSS puro (sem frameworks)
+
+---
+
+## 📦 Como rodar o projeto
+
+```bash
+# Clone o repositório
+git clone https://github.com/danielkleira/latimproject.git
+
+# Entre na pasta
+cd latimproject
+
+# Instale as dependências
+npm install
+
+# Rode o projeto
+npm run dev
 ```
