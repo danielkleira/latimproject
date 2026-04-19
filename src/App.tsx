@@ -47,7 +47,7 @@ function shuffleHiddenWords(tokens: string[], percentage: number): TokenItem[] {
     .map((t, i) => ({ t, i }))
     .filter(({ t }) => /\w+/.test(t) && !STOPWORDS.has(normalize(t)));
 
-  const toHide = Math.floor(candidates.length * percentage);
+  const toHide = Math.max(1, Math.floor(candidates.length * percentage));
   const indexes = new Set<number>();
 
   while (indexes.size < toHide && indexes.size < candidates.length) {
@@ -127,7 +127,7 @@ export default function App() {
               value={difficulty}
               onChange={(e) => setDifficulty(parseFloat(e.target.value))}
             >
-              <option value={0.15}>Leigo 🕯️</option>
+              <option value={0.2}>Leigo 🕯️</option>
               <option value={0.25}>Acólito 📖</option>
               <option value={0.4}>Clerigo ⛪</option>
               <option value={0.5}>Santo 🙏</option>
